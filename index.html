@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Generate Codes</title>
+</head>
+<body>
+    <h2>Generate Access Codes</h2>
+    <button onclick="generateCode()">Generate Code</button>
+    <div id="codes"></div>
+
+    <script>
+        const codes = [];
+
+        function generateCode() {
+            const code = Math.random().toString(36).substring(2, 8).toUpperCase(); // إنشاء كود عشوائي
+            codes.push(code);
+
+            // عرض الكود مع الرابط للمستخدم
+            document.getElementById('codes').innerHTML += `<p>Code: ${code} - Use this code to login at <a href="https://your-username.github.io/user-site/login.html" target="_blank">User Login</a></p>`;
+        }
+    </script>
+</body>
+</html>
